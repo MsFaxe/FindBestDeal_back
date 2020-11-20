@@ -1,17 +1,25 @@
 package com.kodilla.games.domain.cart;
 
 import com.kodilla.games.domain.game.Game;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Cart {
     @Id
+    @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
-    @ManyToMany
-    private List<Game> gameList;
+    @ManyToMany(fetch = FetchType.EAGER)/*(mappedBy = "cartList")*/
+    //@JoinColumn(name = "gameId", referencedColumnName = "id")
+    private List<Game> gameList = new ArrayList<>();
 }

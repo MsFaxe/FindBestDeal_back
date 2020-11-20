@@ -1,19 +1,29 @@
 package com.kodilla.games.domain.order;
 
+import com.kodilla.games.domain.cart.Cart;
 import com.kodilla.games.domain.game.Game;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "orders")
 public class Order {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
-    @ManyToMany
-    private List<Game> orderedGames;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Game> orderedGames = new ArrayList<>();
+
+    public Order(Cart cart) {
+        this.orderedGames = cart.getGameList();
+    }
 }
