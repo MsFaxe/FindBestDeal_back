@@ -4,14 +4,14 @@ import com.kodilla.games.domain.game.dao.GameDao;
 import com.kodilla.games.gog.domain.GogGame;
 import com.kodilla.games.gog.domain.dao.GogGameDao;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.data.mapping.Alias.ofNullable;
 
 @RunWith(SpringRunner.class)
@@ -21,11 +21,6 @@ public class GameTest {
     private GameDao gameDao;
     @Autowired
     private GogGameDao gogGameDao;
-
-    @Before
-    public void initTests() {
-
-    }
 
     @After
     public void cleanUp() {
@@ -43,7 +38,6 @@ public class GameTest {
         assertEquals(1, gameDao.findAll().size());
         assertEquals(game, gameDao.findById(id).orElse(null));
         assertTrue(gameDao.findById(id).isPresent());
-
     }
 
     @Test

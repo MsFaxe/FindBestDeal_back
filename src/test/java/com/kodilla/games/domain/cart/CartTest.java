@@ -4,7 +4,6 @@ import com.kodilla.games.domain.cart.dao.CartDao;
 import com.kodilla.games.domain.game.Game;
 import com.kodilla.games.domain.game.dao.GameDao;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +22,6 @@ public class CartTest {
     private CartDao cartDao;
     @Autowired
     private GameDao gameDao;
-
-    @Before
-    public void initTests() {
-
-    }
 
     @After
     public void cleanUp() {

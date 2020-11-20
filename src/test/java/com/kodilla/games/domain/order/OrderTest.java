@@ -113,7 +113,6 @@ public class OrderTest {
 
         //Then
         assertFalse(orderDao.findById(orderId).isPresent());
-
         assertTrue(cartDao.findById(cartId).isPresent());
         assertTrue(gameDao.findById(gameId).isPresent());
         assertEquals(1, cartDao.findById(cartId).get().getGameList().size());
