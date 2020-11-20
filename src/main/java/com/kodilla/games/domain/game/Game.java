@@ -1,7 +1,6 @@
 package com.kodilla.games.domain.game;
 
 import com.kodilla.games.gog.domain.GogGame;
-import com.kodilla.games.steam.domain.SteamGame;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,9 +21,9 @@ public class Game {
     @Column(name="name")
     private String name;
 
-    @OneToOne
+    //@OneToOne
     @JoinColumn(name = "steamId", referencedColumnName = "appid")
-    private SteamGame steamId;
+    private Long steamId;
 
 //    @ManyToMany(fetch = FetchType.EAGER)
 //    @JoinTable(
