@@ -2,16 +2,18 @@ package com.kodilla.games.sevice;
 
 import com.kodilla.games.domain.game.Game;
 import com.kodilla.games.domain.game.dao.GameDao;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.kodilla.games.exception.GameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GameService {
-    @Autowired
-    private GameDao gameDao;
+    private final GameDao gameDao;
+
+    public GameService(GameDao gameDao) {
+        this.gameDao = gameDao;
+    }
 
     public List<Game> getAllGames() {
         return gameDao.findAll();
@@ -21,8 +23,10 @@ public class GameService {
         return gameDao.save(game);
     }
 
-    public Optional<Game> findGameById(Long id) {
-        return gameDao.findById(id);
+    public Game findGameById(Long id) throws GameNotFoundException {
+        return gameDao.findById(id).orElseThrow(
+                () -> new GameNotFoundException("Game with id:" + id + " doesn't already added to cart")
+        );
     }
 
     public void deleteGame(Long id) {

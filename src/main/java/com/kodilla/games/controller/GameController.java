@@ -5,21 +5,23 @@ import com.kodilla.games.domain.game.GameDto;
 import com.kodilla.games.exception.GameNotFoundException;
 import com.kodilla.games.mapper.GameMapper;
 import com.kodilla.games.sevice.GameService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/game")
 public class GameController {
-    @Autowired
-    private GameService gameService;
-    @Autowired
-    private GameMapper gameMapper;
+    private final GameService gameService;
+    private final GameMapper gameMapper;
+
+    public GameController(GameService gameService, GameMapper gameMapper) {
+        this.gameService = gameService;
+        this.gameMapper = gameMapper;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "games")
     public List<GameDto> getGames() {
@@ -28,7 +30,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.GET, value = "game")
     public GameDto getGame(@RequestParam Long id) throws GameNotFoundException {
-        return gameMapper.mapToGameDto(gameService.findGameById(id).orElseThrow(GameNotFoundException::new));
+        return gameMapper.mapToGameDto(gameService.findGameById(id));
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "addGame", consumes = APPLICATION_JSON_VALUE)
