@@ -24,6 +24,6 @@ public class Order {
     private List<Game> orderedGames = new ArrayList<>();
 
     public Order(Cart cart) {
-        this.orderedGames = cart.getGameList();
+        this.orderedGames.addAll(cart.getGameList());
     }
 }
