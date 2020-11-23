@@ -4,6 +4,9 @@ import com.kodilla.games.domain.order.Order;
 import com.kodilla.games.domain.order.OrderDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class OrderMapper {
 
@@ -16,5 +19,11 @@ public class OrderMapper {
                     order.getOrderedGames()
             );
         }
+    }
+
+    public List<OrderDto> mapToOrderDtoList(List<Order> orderList) {
+        return orderList.stream()
+                .map(this::mapToOrderDto)
+                .collect(Collectors.toList());
     }
 }

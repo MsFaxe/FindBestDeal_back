@@ -20,10 +20,14 @@ public class Order {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "cartId")
+    private Long cartId;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Game> orderedGames = new ArrayList<>();
 
     public Order(Cart cart) {
+        this.cartId = cart.getId();
         this.orderedGames.addAll(cart.getGameList());
     }
 }

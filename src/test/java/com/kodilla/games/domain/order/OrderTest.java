@@ -55,6 +55,7 @@ public class OrderTest {
         //Then
         assertTrue(orderDao.findById(orderId).isPresent());
         assertEquals(2, orderDao.findById(orderId).get().getOrderedGames().size());
+        //assertEquals(2, orderDao.findById(orderId).get().getCart().getGameList().size());
     }
 
     @Test
@@ -66,11 +67,11 @@ public class OrderTest {
 
         cart.getGameList().add(game);
 
-        Order order = new Order(cart);
-
         gameDao.save(game);
         gameDao.save(game2);
         cartDao.save(cart);
+
+        Order order = new Order(cart);
         orderDao.save(order);
 
         Long cartId = cart.getId();
@@ -89,6 +90,7 @@ public class OrderTest {
         //Then
         assertTrue(orderDao.findById(orderId).isPresent());
         assertEquals(2, orderDao.findById(orderId).get().getOrderedGames().size());
+        assertEquals(cartId, orderDao.findById(orderId).get().getCartId());
     }
 
     @Test
