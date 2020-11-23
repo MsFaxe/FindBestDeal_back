@@ -2,11 +2,11 @@ package com.kodilla.games.controller;
 
 import com.kodilla.games.domain.cart.CartDto;
 import com.kodilla.games.domain.game.GameDto;
-import com.kodilla.games.domain.order.OrderDto;
 import com.kodilla.games.exception.CartNotFoundException;
 import com.kodilla.games.exception.GameNotFoundException;
 import com.kodilla.games.mapper.CartMapper;
 import com.kodilla.games.sevice.CartService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,14 +16,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/cart")
+@RequiredArgsConstructor
 public class CartController {
     private final CartService cartService;
     private final CartMapper cartMapper;
-
-    public CartController(CartService cartService, CartMapper cartMapper) {
-        this.cartService = cartService;
-        this.cartMapper = cartMapper;
-    }
 
     @RequestMapping(method = RequestMethod.GET, value = "getCarts")
     public List<CartDto> getCarts() {
@@ -55,8 +51,14 @@ public class CartController {
         return cartService.deleteGameFromCart(cartId, gameId);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "submitOrder")
-    public OrderDto submitOrder(@RequestBody Long cartId) throws CartNotFoundException {
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteCart")
+    public List<CartDto> deleteCart(@RequestParam Long cartId) {
+        cartService.deleteCart(cartId);
+        return getCarts();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "submitOrder", consumes = APPLICATION_JSON_VALUE)
+    public CartDto submitOrder(@RequestBody Long cartId) throws CartNotFoundException {
         return cartService.submitOrder(cartId);
     }
 }
