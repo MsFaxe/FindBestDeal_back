@@ -2,6 +2,7 @@ package com.kodilla.games.controller;
 
 import com.kodilla.games.domain.cart.CartDto;
 import com.kodilla.games.domain.game.GameDto;
+import com.kodilla.games.domain.order.OrderDto;
 import com.kodilla.games.exception.CartNotFoundException;
 import com.kodilla.games.exception.GameNotFoundException;
 import com.kodilla.games.mapper.CartMapper;
@@ -58,7 +59,7 @@ public class CartController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "submitOrder", consumes = APPLICATION_JSON_VALUE)
-    public CartDto submitOrder(@RequestBody Long cartId) throws CartNotFoundException {
+    public OrderDto submitOrder(@RequestBody Long cartId) throws CartNotFoundException {
         return cartService.submitOrder(cartId);
     }
 }

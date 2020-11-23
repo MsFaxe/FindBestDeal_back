@@ -5,6 +5,7 @@ import com.kodilla.games.domain.cart.CartDto;
 import com.kodilla.games.domain.cart.dao.CartDao;
 import com.kodilla.games.domain.game.Game;
 import com.kodilla.games.domain.game.GameDto;
+import com.kodilla.games.domain.order.OrderDto;
 import com.kodilla.games.exception.CartNotFoundException;
 import com.kodilla.games.exception.GameNotFoundException;
 import com.kodilla.games.mapper.CartMapper;
@@ -41,6 +42,10 @@ public class CartService {
         cartDao.deleteById(id);
     }
 
+    public void clearCart(Long id) {
+        cartDao.findById(id).get().getGameList().clear();
+    }
+
     public List<GameDto> getGamesListFromCart(Long cartId) throws CartNotFoundException {
         Cart cart = findCartById(cartId);
         return gameMapper.mapToGameDtoList(cart.getGameList());
@@ -68,8 +73,9 @@ public class CartService {
         return cartMapper.mapToCartDto(saveCart(cart));
     }
 
-    public CartDto submitOrder(Long cartId) throws CartNotFoundException {
-        orderService.createOrder(cartMapper.mapToCartDto(findCartById(cartId)));
-        return cartMapper.mapToCartDto(new Cart());
+    public OrderDto submitOrder(Long cartId) throws CartNotFoundException {
+        OrderDto order = orderService.createOrder(cartId);
+        clearCart(cartId);
+        return order;
     }
 }
