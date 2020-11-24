@@ -1,7 +1,7 @@
-package com.findbestdeal.backend.mapper;
+package com.kodilla.games.mapper;
 
-import com.findbestdeal.backend.domain.game.GameDto;
-import com.findbestdeal.backend.domain.game.Game;
+import com.kodilla.games.domain.game.GameDto;
+import com.kodilla.games.domain.game.Game;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
