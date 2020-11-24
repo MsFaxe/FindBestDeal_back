@@ -1,6 +1,6 @@
-package com.findbestdeal.backend.domain.cart.dao;
+package com.kodilla.games.domain.cart.dao;
 
-import com.findbestdeal.backend.domain.cart.Cart;
+import com.kodilla.games.domain.cart.Cart;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

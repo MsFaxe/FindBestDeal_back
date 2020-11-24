@@ -1,6 +1,6 @@
-package com.findbestdeal.backend.domain.cart;
+package com.kodilla.games.domain.cart;
 
-import com.findbestdeal.backend.domain.game.Game;
+import com.kodilla.games.domain.game.Game;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
