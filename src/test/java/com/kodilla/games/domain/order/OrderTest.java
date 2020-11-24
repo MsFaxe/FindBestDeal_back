@@ -1,9 +1,9 @@
 package com.kodilla.games.domain.order;
 
 import com.kodilla.games.domain.cart.Cart;
-import com.kodilla.games.domain.cart.dao.CartDao;
 import com.kodilla.games.domain.game.Game;
 import com.kodilla.games.domain.game.dao.GameDao;
+import com.kodilla.games.domain.cart.dao.CartDao;
 import com.kodilla.games.domain.order.dao.OrderDao;
 import org.junit.After;
 import org.junit.Test;

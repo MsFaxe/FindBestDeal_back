@@ -1,4 +1,4 @@
-package com.kodilla.games.exception;
+package com.findbestdeal.backend.exception;
 
 import lombok.NoArgsConstructor;
 

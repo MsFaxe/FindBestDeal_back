@@ -1,8 +1,8 @@
-package com.kodilla.games.sevice;
+package com.findbestdeal.backend.sevice;
 
-import com.kodilla.games.domain.game.Game;
-import com.kodilla.games.domain.game.dao.GameDao;
-import com.kodilla.games.exception.GameNotFoundException;
+import com.findbestdeal.backend.exception.GameNotFoundException;
+import com.findbestdeal.backend.domain.game.Game;
+import com.findbestdeal.backend.domain.game.dao.GameDao;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

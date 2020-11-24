@@ -1,10 +1,10 @@
-package com.kodilla.games.controller;
+package com.findbestdeal.backend.controller;
 
-import com.kodilla.games.domain.game.Game;
-import com.kodilla.games.domain.game.GameDto;
-import com.kodilla.games.exception.GameNotFoundException;
-import com.kodilla.games.mapper.GameMapper;
-import com.kodilla.games.sevice.GameService;
+import com.findbestdeal.backend.domain.game.Game;
+import com.findbestdeal.backend.domain.game.GameDto;
+import com.findbestdeal.backend.exception.GameNotFoundException;
+import com.findbestdeal.backend.mapper.GameMapper;
+import com.findbestdeal.backend.sevice.GameService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

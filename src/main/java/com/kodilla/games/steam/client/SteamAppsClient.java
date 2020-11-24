@@ -1,14 +1,13 @@
-package com.kodilla.games.steam.client;
+package com.findbestdeal.backend.steam.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kodilla.games.domain.game.GameDto;
-import com.kodilla.games.steam.config.SteamConfig;
-import com.kodilla.games.steam.domain.SteamGame;
-import com.kodilla.games.steam.service.SteamService;
+import com.findbestdeal.backend.steam.config.SteamConfig;
+import com.findbestdeal.backend.domain.game.GameDto;
+import com.findbestdeal.backend.steam.domain.SteamGame;
+import com.findbestdeal.backend.steam.service.SteamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -40,7 +39,9 @@ public class SteamAppsClient {
         }
     }
 
-    @Bean
+    public
+
+   // @Bean
     CommandLineRunner steamJsonRunner(SteamService steamService) {
         return args -> {
             ObjectMapper mapper = new ObjectMapper();

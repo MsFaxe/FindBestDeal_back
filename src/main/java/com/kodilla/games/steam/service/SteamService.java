@@ -1,7 +1,7 @@
-package com.kodilla.games.steam.service;
+package com.findbestdeal.backend.steam.service;
 
-import com.kodilla.games.steam.domain.SteamGame;
-import com.kodilla.games.steam.repository.SteamRepository;
+import com.findbestdeal.backend.steam.domain.SteamGame;
+import com.findbestdeal.backend.steam.repository.SteamRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

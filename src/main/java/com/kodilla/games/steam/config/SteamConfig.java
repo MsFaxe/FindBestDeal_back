@@ -1,4 +1,4 @@
-package com.kodilla.games.steam.config;
+package com.findbestdeal.backend.steam.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

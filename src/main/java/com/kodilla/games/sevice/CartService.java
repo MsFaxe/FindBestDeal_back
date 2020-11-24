@@ -1,15 +1,15 @@
-package com.kodilla.games.sevice;
+package com.findbestdeal.backend.sevice;
 
-import com.kodilla.games.domain.cart.Cart;
-import com.kodilla.games.domain.cart.CartDto;
-import com.kodilla.games.domain.cart.dao.CartDao;
-import com.kodilla.games.domain.game.Game;
-import com.kodilla.games.domain.game.GameDto;
-import com.kodilla.games.domain.order.OrderDto;
-import com.kodilla.games.exception.CartNotFoundException;
-import com.kodilla.games.exception.GameNotFoundException;
-import com.kodilla.games.mapper.CartMapper;
-import com.kodilla.games.mapper.GameMapper;
+import com.findbestdeal.backend.domain.cart.Cart;
+import com.findbestdeal.backend.domain.game.Game;
+import com.findbestdeal.backend.domain.game.GameDto;
+import com.findbestdeal.backend.exception.CartNotFoundException;
+import com.findbestdeal.backend.exception.GameNotFoundException;
+import com.findbestdeal.backend.mapper.CartMapper;
+import com.findbestdeal.backend.mapper.GameMapper;
+import com.findbestdeal.backend.domain.cart.CartDto;
+import com.findbestdeal.backend.domain.cart.dao.CartDao;
+import com.findbestdeal.backend.domain.order.OrderDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

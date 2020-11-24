@@ -1,11 +1,10 @@
-package com.kodilla.games.gog.client;
+package com.findbestdeal.backend.gog.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kodilla.games.gog.domain.GogGame;
-import com.kodilla.games.gog.service.GogService;
+import com.findbestdeal.backend.gog.domain.GogGame;
+import com.findbestdeal.backend.gog.service.GogService;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

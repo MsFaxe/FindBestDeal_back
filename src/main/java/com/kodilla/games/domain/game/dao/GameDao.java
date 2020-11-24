@@ -1,6 +1,6 @@
-package com.kodilla.games.domain.game.dao;
+package com.findbestdeal.backend.domain.game.dao;
 
-import com.kodilla.games.domain.game.Game;
+import com.findbestdeal.backend.domain.game.Game;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

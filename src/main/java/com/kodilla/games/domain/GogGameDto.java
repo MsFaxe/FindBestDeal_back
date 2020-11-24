@@ -1,4 +1,4 @@
-package com.kodilla.games.domain;
+package com.findbestdeal.backend.domain;
 
 import lombok.Data;
 

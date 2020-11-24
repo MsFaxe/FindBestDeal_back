@@ -1,4 +1,4 @@
-package com.kodilla.games.domain.game;
+package com.findbestdeal.backend.domain.game;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

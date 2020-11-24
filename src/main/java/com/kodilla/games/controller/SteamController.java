@@ -1,6 +1,6 @@
-package com.kodilla.games.controller;
+package com.findbestdeal.backend.controller;
 
-import com.kodilla.games.domain.SteamGameDto;
+import com.findbestdeal.backend.domain.SteamGameDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

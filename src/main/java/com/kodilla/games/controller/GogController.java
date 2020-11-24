@@ -1,6 +1,6 @@
-package com.kodilla.games.controller;
+package com.findbestdeal.backend.controller;
 
-import com.kodilla.games.domain.GogGameDto;
+import com.findbestdeal.backend.domain.GogGameDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
-package com.kodilla.games.gog.controller;
+package com.findbestdeal.backend.gog.controller;
 
-import com.kodilla.games.gog.domain.GogGame;
-import com.kodilla.games.gog.service.GogService;
+import com.findbestdeal.backend.gog.domain.GogGame;
+import com.findbestdeal.backend.gog.service.GogService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

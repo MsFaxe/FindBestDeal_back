@@ -1,6 +1,6 @@
-package com.kodilla.games.gog.domain.dao;
+package com.findbestdeal.backend.gog.domain.dao;
 
-import com.kodilla.games.gog.domain.GogGame;
+import com.findbestdeal.backend.gog.domain.GogGame;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
