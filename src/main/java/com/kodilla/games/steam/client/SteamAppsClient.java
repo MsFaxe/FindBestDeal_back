@@ -1,11 +1,12 @@
-package com.findbestdeal.backend.steam.client;
+package com.kodilla.games.steam.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.findbestdeal.backend.steam.config.SteamConfig;
-import com.findbestdeal.backend.domain.game.GameDto;
-import com.findbestdeal.backend.steam.domain.SteamGame;
-import com.findbestdeal.backend.steam.service.SteamService;
+import com.kodilla.games.domain.game.GameDto;
+import com.kodilla.games.steam.config.SteamConfig;
+import com.kodilla.games.steam.domain.SteamAppDto;
+import com.kodilla.games.steam.domain.SteamGame;
+import com.kodilla.games.steam.service.SteamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -39,7 +40,13 @@ public class SteamAppsClient {
         }
     }
 
-    public
+    public SteamAppDto getSteamGame(Long gameId) {
+        SteamAppDto steamAppDto = restTemplate.getForObject(
+                "https://store.steampowered.com/api/appdetails?filters=basic,price_overview&appids=" + gameId,
+                SteamAppDto.class);
+
+        return steamAppDto;
+    }
 
    // @Bean
     CommandLineRunner steamJsonRunner(SteamService steamService) {

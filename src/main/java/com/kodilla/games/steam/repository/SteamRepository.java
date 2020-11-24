@@ -1,6 +1,6 @@
-package com.findbestdeal.backend.steam.repository;
+package com.kodilla.games.steam.repository;
 
-import com.findbestdeal.backend.steam.domain.SteamGame;
+import com.kodilla.games.steam.domain.SteamGame;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SteamRepository extends CrudRepository<SteamGame, Long> {

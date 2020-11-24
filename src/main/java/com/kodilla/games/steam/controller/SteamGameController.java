@@ -1,7 +1,7 @@
-package com.findbestdeal.backend.steam.controller;
+package com.kodilla.games.steam.controller;
 
-import com.findbestdeal.backend.steam.service.SteamService;
-import com.findbestdeal.backend.steam.domain.SteamGame;
+import com.kodilla.games.steam.service.SteamService;
+import com.kodilla.games.steam.domain.SteamGame;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
