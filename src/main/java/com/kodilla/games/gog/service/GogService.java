@@ -1,7 +1,7 @@
-package com.findbestdeal.backend.gog.service;
+package com.kodilla.games.gog.service;
 
-import com.findbestdeal.backend.gog.domain.GogGame;
-import com.findbestdeal.backend.gog.repository.GogRepository;
+import com.kodilla.games.gog.domain.GogGame;
+import com.kodilla.games.gog.repository.GogRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
