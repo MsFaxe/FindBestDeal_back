@@ -1,12 +1,12 @@
-package com.findbestdeal.backend.controller;
+package com.kodilla.games.controller;
 
-import com.findbestdeal.backend.domain.game.GameDto;
-import com.findbestdeal.backend.domain.order.OrderDto;
-import com.findbestdeal.backend.exception.CartNotFoundException;
-import com.findbestdeal.backend.exception.GameNotFoundException;
-import com.findbestdeal.backend.mapper.CartMapper;
-import com.findbestdeal.backend.sevice.CartService;
-import com.findbestdeal.backend.domain.cart.CartDto;
+import com.kodilla.games.domain.game.GameDto;
+import com.kodilla.games.domain.order.OrderDto;
+import com.kodilla.games.exception.CartNotFoundException;
+import com.kodilla.games.exception.GameNotFoundException;
+import com.kodilla.games.mapper.CartMapper;
+import com.kodilla.games.sevice.CartService;
+import com.kodilla.games.domain.cart.CartDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
