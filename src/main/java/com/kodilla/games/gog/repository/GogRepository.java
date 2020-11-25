@@ -1,6 +1,6 @@
-package com.findbestdeal.backend.gog.repository;
+package com.kodilla.games.gog.repository;
 
-import com.findbestdeal.backend.gog.domain.GogGame;
+import com.kodilla.games.gog.domain.GogGame;
 import org.springframework.data.repository.CrudRepository;
 
 public interface GogRepository extends CrudRepository<GogGame, Long> {
