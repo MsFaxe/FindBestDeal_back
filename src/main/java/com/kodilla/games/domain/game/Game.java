@@ -21,20 +21,9 @@ public class Game {
     @Column(name="name")
     private String name;
 
-    //@OneToOne
     @JoinColumn(name = "steamId", referencedColumnName = "appid")
     private Long steamId;
 
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(
-//            name = "JOIN_GAME_LIST",
-//            joinColumns = {@JoinColumn(name = "GAME_ID", referencedColumnName = "GAME_ID")},
-//            inverseJoinColumns = {@JoinColumn(name = "CART_ID", referencedColumnName = "CART_ID")}
-//
-//    )
-//    private List<Cart> cartList = new ArrayList<>();
-
-    //@OneToOne
     @JoinColumn(name = "gogId", referencedColumnName = "id")
     private Long gogId;
 

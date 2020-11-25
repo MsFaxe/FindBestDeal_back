@@ -1,13 +1,11 @@
 package com.kodilla.games.gog.service;
 
-import com.kodilla.games.gog.client.GogAppsClient;
+import com.kodilla.games.exception.GameNotFoundException;
 import com.kodilla.games.gog.domain.GogApp;
 import com.kodilla.games.gog.domain.GogGame;
 import com.kodilla.games.gog.domain.GogProduct;
-import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.repository.GogProductsRepository;
 import com.kodilla.games.gog.repository.GogRepository;
-import com.kodilla.games.mapper.GogMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +16,8 @@ import java.util.List;
 public class GogService {
     private final GogRepository gogRepository;
     private final GogProductsRepository gogProductsRepository;
-    private final GogAppsClient gogAppsClient;
-    private final GogMapper gogMapper;
 
-    public Iterable<GogGame> list() {
+    public List<GogGame> list() {
         return gogRepository.findAll();
     }
 
@@ -33,9 +29,13 @@ public class GogService {
         return gogProductsRepository.saveAll(games);
     }
 
-    public GogAppDto getSearchedGame(String title) {
-        GogApp gogApp = gogMapper.mapToGogApp(gogAppsClient.getGogGames(title));
+    public void getSearchedGame(GogApp gogApp) {
         saveProduct(gogApp.getProducts());
-        return gogAppsClient.getGogGames(title);
+    }
+
+    public GogGame getSearchedGameById(Long gogId) throws GameNotFoundException {
+        return gogRepository.findById(gogId).orElseThrow(
+                () -> new GameNotFoundException("GogGame with id:" + gogId + " does not exist.")
+        );
     }
 }

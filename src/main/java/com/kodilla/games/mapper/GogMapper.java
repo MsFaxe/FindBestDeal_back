@@ -1,8 +1,10 @@
 package com.kodilla.games.mapper;
 
 import com.kodilla.games.gog.domain.GogApp;
+import com.kodilla.games.gog.domain.GogGame;
 import com.kodilla.games.gog.domain.GogPrice;
 import com.kodilla.games.gog.domain.GogProduct;
+import com.kodilla.games.gog.domain.dto.gogGame_list.GogGameDto;
 import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.domain.dto.single_gogGame.GogPriceDto;
 import com.kodilla.games.gog.domain.dto.single_gogGame.GogProductDto;
@@ -21,8 +23,7 @@ public class GogMapper {
         return new GogProduct(
                 gogProductDto.getId(),
                 gogProductDto.getTitle(),
-                mapToPrice(gogProductDto.getPrice()).toString()
-        );
+                mapToPrice(gogProductDto.getPrice()).toString());
     }
 
     public List<GogProduct> mapToProductList(List<GogProductDto> gogProductDtos) {
@@ -32,8 +33,18 @@ public class GogMapper {
     }
 
     public GogApp mapToGogApp(GogAppDto gogAppDto) {
-        return new GogApp(
-                mapToProductList(gogAppDto.getProducts())
-        );
+        return new GogApp(mapToProductList(gogAppDto.getProducts()));
+    }
+
+    public GogGameDto mapToGogGameDto(GogGame gogGame) {
+        return new GogGameDto(
+                gogGame.getId(),
+                gogGame.getName());
+    }
+
+    public List<GogGameDto> mapToListGogGameDto(List<GogGame> gogGames) {
+        return gogGames.stream()
+                .map(this::mapToGogGameDto)
+                .collect(Collectors.toList());
     }
 }

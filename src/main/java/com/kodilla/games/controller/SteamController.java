@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class SteamController {
     private final SteamFacade steamFacade;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/list")
+    @RequestMapping(method = RequestMethod.GET, value = "list")
     public SteamRootDto getListOfSteamGames() {
         return steamFacade.showAllSteamApps();
     }

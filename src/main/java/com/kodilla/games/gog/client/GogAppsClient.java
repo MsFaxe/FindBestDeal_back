@@ -3,11 +3,12 @@ package com.kodilla.games.gog.client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodilla.games.config.CoreConfiguration;
-import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.domain.GogGame;
+import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.service.GogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,7 +23,7 @@ public class GogAppsClient {
     private final CoreConfiguration configuration;
     private final RestTemplate restTemplate;
 
-    //@Bean
+    @Bean
     CommandLineRunner gogJsonRunner(GogService gogService) {
         return args -> {
             ObjectMapper mapper = new ObjectMapper();

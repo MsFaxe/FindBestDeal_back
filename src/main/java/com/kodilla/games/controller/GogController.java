@@ -1,12 +1,12 @@
 package com.kodilla.games.controller;
 
-import com.kodilla.games.domain.GogGameDto;
+import com.kodilla.games.exception.GameNotFoundException;
+import com.kodilla.games.gog.GogFacade;
+import com.kodilla.games.gog.domain.dto.gogGame_list.GogGameDto;
 import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
-import com.kodilla.games.gog.service.GogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -14,20 +14,20 @@ import java.util.List;
 @RequestMapping("/v1/gog")
 @RequiredArgsConstructor
 public class GogController {
-    private final GogService gogService;
+    private final GogFacade gogFacade;
 
-    @RequestMapping(method = RequestMethod.GET, value = "allApps")
-    public List<GogGameDto> getListOfSteamGames() {
-        return new ArrayList<>();
+    @RequestMapping(method = RequestMethod.GET, value = "list")
+    public List<GogGameDto> getListOfGogGames() {
+        return gogFacade.showAllGogApps();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getGame")
-    public GogGameDto getSteamGame(@RequestParam long id) {
-        return new GogGameDto();
+    @RequestMapping(method = RequestMethod.GET, value = "getGogGameById")
+    public GogGameDto getGogGameById(@RequestParam Long gogId) throws GameNotFoundException {
+        return gogFacade.searchedGameById(gogId);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getGogGame")
-    public GogAppDto getGogGame(@RequestParam String title) {
-        return gogService.getSearchedGame(title);
+    @RequestMapping(method = RequestMethod.GET, value = "getGogGameByTitle")
+    public GogAppDto getGogGameByTitle(@RequestParam String title) {
+        return gogFacade.searchedGameByTitle(title);
     }
 }
