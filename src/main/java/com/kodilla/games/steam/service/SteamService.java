@@ -1,9 +1,7 @@
 package com.kodilla.games.steam.service;
 
-import com.kodilla.games.mapper.SteamMapper;
 import com.kodilla.games.steam.client.SteamAppsClient;
 import com.kodilla.games.steam.domain.SteamApp;
-import com.kodilla.games.steam.domain.SteamRoot;
 import com.kodilla.games.steam.domain.dto.apps_list.SteamRootDto;
 import com.kodilla.games.steam.repository.SteamRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +14,6 @@ import java.util.List;
 public class SteamService {
     private final SteamAppsClient steamAppsClient;
     private final SteamRepository steamRepository;
-    private final SteamMapper steamMapper;
 
     public Iterable<SteamApp> list() {
         return steamRepository.findAll();
@@ -30,8 +27,7 @@ public class SteamService {
         return steamAppsClient.getSteamGames();
     }
 
-    public void saveAllSteamApps() {
-        SteamRoot steamRoot = steamMapper.mapToSteamRoot(steamAppsClient.getSteamGames());
-        steamRepository.saveAll(steamRoot.getApplist().getApps());
+    public void saveAll(List<SteamApp> appList) {
+        steamRepository.saveAll(appList);
     }
 }
