@@ -3,7 +3,7 @@ package com.kodilla.games.gog.client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kodilla.games.config.CoreConfiguration;
-import com.kodilla.games.gog.domain.online.GogAppDto;
+import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.domain.GogGame;
 import com.kodilla.games.gog.service.GogService;
 import lombok.RequiredArgsConstructor;

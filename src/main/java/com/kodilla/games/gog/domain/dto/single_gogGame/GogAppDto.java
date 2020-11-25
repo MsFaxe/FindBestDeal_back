@@ -1,4 +1,4 @@
-package com.kodilla.games.gog.domain.dto;
+package com.kodilla.games.gog.domain.dto.single_gogGame;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

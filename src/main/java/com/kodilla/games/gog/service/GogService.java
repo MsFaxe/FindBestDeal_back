@@ -4,7 +4,7 @@ import com.kodilla.games.gog.client.GogAppsClient;
 import com.kodilla.games.gog.domain.GogApp;
 import com.kodilla.games.gog.domain.GogGame;
 import com.kodilla.games.gog.domain.GogProduct;
-import com.kodilla.games.gog.domain.online.GogAppDto;
+import com.kodilla.games.gog.domain.dto.single_gogGame.GogAppDto;
 import com.kodilla.games.gog.repository.GogProductsRepository;
 import com.kodilla.games.gog.repository.GogRepository;
 import com.kodilla.games.mapper.GogMapper;
