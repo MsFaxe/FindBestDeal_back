@@ -2,7 +2,7 @@ package com.kodilla.games.domain.game;
 
 import com.kodilla.games.domain.game.dao.GameDao;
 import com.kodilla.games.gog.domain.GogGame;
-import com.kodilla.games.gog.domain.dao.GogGameDao;
+import com.kodilla.games.gog.repository.GogRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ public class GameTest {
     @Autowired
     private GameDao gameDao;
     @Autowired
-    private GogGameDao gogGameDao;
+    private GogRepository gogGameDao;
 
     @After
     public void cleanUp() {
