@@ -1,7 +1,7 @@
 package com.kodilla.games.steam.controller;
 
+import com.kodilla.games.steam.domain.SteamApp;
 import com.kodilla.games.steam.service.SteamService;
-import com.kodilla.games.steam.domain.SteamGame;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class SteamGameController {
     }
 
     @GetMapping("/list")
-    public Iterable<SteamGame> list() {
+    public Iterable<SteamApp> list() {
         return steamService.list();
     }
 }

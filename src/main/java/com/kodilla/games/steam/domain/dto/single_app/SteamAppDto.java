@@ -1,4 +1,4 @@
-package com.kodilla.games.steam.domain;
+package com.kodilla.games.steam.domain.dto.single_app;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;

@@ -1,4 +1,4 @@
-package com.kodilla.games.steam.domain;
+package com.kodilla.games.steam.domain.dto.single_app;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GameDetails {
+public class GameDetailsDto {
     @JsonProperty("is_free")
     private String is_free;
     @JsonProperty("name")
@@ -18,5 +18,5 @@ public class GameDetails {
     @JsonProperty("steam_appid")
     private String steam_appid;
     @JsonProperty("price_overview")
-    private PriceOverview price_overview;
+    private PriceOverviewDto price_overview;
 }

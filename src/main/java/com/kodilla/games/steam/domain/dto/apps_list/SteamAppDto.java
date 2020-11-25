@@ -1,4 +1,4 @@
-package com.kodilla.games.steam.domain;
+package com.kodilla.games.steam.domain.dto.apps_list;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SteamGameDto {
-    @JsonProperty("data")
-    private GameDetails gameDetails;
+public class SteamAppDto {
+    @JsonProperty("appid")
+    private Long appid;
+    @JsonProperty("name")
+    private String name;
 }

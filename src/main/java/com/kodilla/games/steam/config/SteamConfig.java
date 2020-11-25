@@ -9,6 +9,4 @@ import org.springframework.stereotype.Component;
 public class SteamConfig {
     @Value("${steam.api.endpoint}")
     private String steamApiEndpoint;
-
-    private String steamGameId;
 }

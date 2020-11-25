@@ -2,23 +2,23 @@ package com.kodilla.games.controller;
 
 import com.kodilla.games.domain.SteamGameDto2;
 import com.kodilla.games.steam.client.SteamAppsClient;
-import com.kodilla.games.steam.domain.SteamAppDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.kodilla.games.steam.domain.dto.apps_list.SteamRootDto;
+import com.kodilla.games.steam.domain.dto.single_app.SteamAppDto;
+import com.kodilla.games.steam.service.SteamService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/v1/steamapps")
+@RequiredArgsConstructor
 public class SteamController {
-    @Autowired
-    private SteamAppsClient steamAppsClient;
+    private final SteamAppsClient steamAppsClient;
+    private final SteamService steamService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "allApps")
-    public List<SteamGameDto2> getListOfSteamGames() {
-        return new ArrayList<>();
+    @GetMapping(value = "/list")
+    public SteamRootDto getListOfSteamGames() {
+        return steamService.getAllSteamApps();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getGame")
@@ -28,7 +28,6 @@ public class SteamController {
 
     @RequestMapping(method = RequestMethod.GET, value = "getSteamGame")
     public SteamAppDto GetSteamGame(@RequestParam Long gameId) {
-        System.out.println(steamAppsClient.getSteamGame(gameId));
         return steamAppsClient.getSteamGame(gameId);
     }
 }
