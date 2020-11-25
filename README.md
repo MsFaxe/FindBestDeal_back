@@ -1,7 +1,7 @@
 # FindBestDeal_back
 
 repozytorium frontend (front nie jest połączonz z aplikacją backendową):
-https://github.com/MsFaxe/FindBestDeal_front/commit/aa95af28267230601404af7dc5ef97c07ef85569
+https://github.com/MsFaxe/FindBestDeal_front
 
 http://localhost:8080/swagger-ui.html
 
